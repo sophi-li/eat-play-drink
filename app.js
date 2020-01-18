@@ -1,17 +1,17 @@
 // Array of markers
 let markers = [
     {
-      coords:{lat:42.4668,lng:-70.9495},
-      content:'<h1>Lynn MA</h1>',
+      coords:{lat:37.7638,lng:-122.4690},
+      content:'<h1>San Tung</h1>',
       category: 'eat'
     },
     {
-      coords:{lat:42.8584,lng:-70.9300},
-      content:'<h1>Amesbury MA</h1>',
+      coords:{lat:37.7754,lng:-122.4377},
+      content:'<h1>Emporium</h1>',
       category: 'play'
     },
     {
-      coords:{lat:42.7762,lng:-71.0773},
+      coords:{lat:37.7399,lng:-122.4091},
       content:'<h1>Amesbury MA</h1>',
       category: 'drink'
     }
@@ -24,8 +24,8 @@ let gooMarkers = [];
 function initMap(){
     // Map options
     var options = {
-      zoom:8,
-      center:{lat:42.3601,lng:-71.0589}
+      zoom:12,
+      center:{lat:37.7749,lng:-122.4194}
     }
 
     // New map
