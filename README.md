@@ -8,9 +8,9 @@ Live app: https://sophiali.dev/eat-play-drink/
 - User can reset the map locations
 
 ## Future Application Features
-- [ ] Locations have more than one type tag
+- [ ] Locations have more than one or a sub type tag
 - [ ] Locations have different pins based on type
-- [ ] User can see a list of locations
+- [ ] User can see a list of locations on side panel
 
 ## Technologies
 HTML, CSS, Javascript, Google Maps API
