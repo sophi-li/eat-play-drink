@@ -5,17 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Eat, Play, Drink</title>
+    <title>Eat Play Drink</title>
 </head>
 <body>
-    <h1>Eat, Play, Drink</h1>
-    <button onclick="filterMarkers(this.value)" value="eat">eat</button>
-    <button onclick="filterMarkers(this.value)" value="play">play</button>
-    <button onclick="filterMarkers(this.value)" value="drink">drink</button>
-    <button onclick="filterMarkers(this.value)" value="">reset</button>
-    
-    <div id="map"></div>
-
+    <section class="container">
+        <h1>Eat // Play // Drink</h1>
+        <p>A curated list of the best places to eat, play, and drink in San Francisco.</p>
+        <p>Choose from the buttons below to filter your search.</p>
+        <div class="button-group">
+            <button onclick="filterMarkers(this.value)" value="eat" id="eat">eat</button>
+            <button onclick="filterMarkers(this.value)" value="play" id="play">play</button>
+            <button onclick="filterMarkers(this.value)" value="drink" id="drink">drink</button>
+            <button onclick="filterMarkers(this.value)" value="">reset</button>
+        </div>
+        <div id="map"></div>
+    </section>
 
     
     <script src="app.js"></script>
