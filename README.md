@@ -10,7 +10,7 @@ Live app: https://sophiali.dev/eat-play-drink/
 ## Future Application Features
 - [ ] Locations have more than one or a sub type tag
 - [ ] Locations have different pins based on type
-- [ ] User can see a list of locations on side panel
+- [ ] User can click "View on Google Maps" to get directions
 
 ## Technologies
 HTML, CSS, Javascript, Google Maps API

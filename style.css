@@ -50,15 +50,15 @@ button:hover{
     cursor: pointer;
 }
 
-#eat {
+.eat {
     border-color: red;
 }
  
-#play {
+.play {
     border-color: green;
 }
 
-#drink {
+.drink {
     border-color: blue;
 }
 
