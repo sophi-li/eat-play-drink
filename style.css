@@ -18,6 +18,10 @@ h1 {
     letter-spacing: 5px;
 }
 
+p {
+    line-height: 1.4;
+}
+
 .button-group {
     margin-top: 2rem;
     margin-bottom: 2rem;
