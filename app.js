@@ -1,3 +1,5 @@
+// For review
+
 // Array of markers
 let markers = [
     {
