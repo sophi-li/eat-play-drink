@@ -50,9 +50,6 @@ function initMap(){
 
     // New map
     var map = new google.maps.Map(document.getElementById('map'), options);
-
-
-
     // Loop through markers
     for(var i = 0;i < markers.length;i++){
       // Add marker
@@ -66,7 +63,7 @@ function initMap(){
         map:map,
         category: props.category
       });
-
+      
       gooMarkers.push(marker)
 
       // Check content
