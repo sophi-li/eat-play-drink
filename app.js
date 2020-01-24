@@ -1,5 +1,5 @@
 // Array of markers
-let markers = [
+const markers = [
     {
       coords:{lat:37.7638,lng:-122.4690},
       content:'<h3>San Tung</h3><p>Chinese restaurant with delicious dry fried chicken wings.</p>',
@@ -43,13 +43,13 @@ let gooMarkers = [];
 
 function initMap(){
     // Map options
-    var options = {
+    let options = {
       zoom:12,
       center:{lat:37.7749,lng:-122.4194}
     }
 
     // New map
-    var map = new google.maps.Map(document.getElementById('map'), options);
+    let map = new google.maps.Map(document.getElementById('map'), options);
     // Loop through markers
     for(var i = 0;i < markers.length;i++){
       // Add marker
@@ -68,7 +68,7 @@ function initMap(){
 
       // Check content
       if(props.content){
-        var infoWindow = new google.maps.InfoWindow({
+        let infoWindow = new google.maps.InfoWindow({
           content:props.content
         });
 
