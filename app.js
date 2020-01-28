@@ -51,7 +51,7 @@ function initMap(){
     // New map
     let map = new google.maps.Map(document.getElementById('map'), options);
     // Loop through markers
-    for(var i = 0;i < markers.length;i++){
+    for(let i = 0;i < markers.length;i++){
       // Add marker
       addMarker(markers[i]);
     }
@@ -67,15 +67,16 @@ function initMap(){
       gooMarkers.push(marker)
 
       // Check content
-      if(props.content){
-        let infoWindow = new google.maps.InfoWindow({
-          content:props.content
-        });
+      // if(props.content){
+      let infoWindow = new google.maps.InfoWindow({
+        content:props.content
+      });
 
-        marker.addListener('click', function(){
-          infoWindow.open(map, marker);
-        });
-      }
+      marker.addListener('click', function(){
+        infoWindow.open(map, marker);
+      });
+        
+      // }
     }
   }
 
@@ -88,3 +89,7 @@ filterMarkers = function(category) {
         }
     }
 }
+
+google.maps.event.addListener(map, "click", function(event) {
+  infowindow.close();
+})
