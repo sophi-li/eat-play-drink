@@ -51,6 +51,11 @@ button:hover{
     cursor: pointer;
 }
 
+button:focus {
+    border: 2px solid;
+    border-color: inherit;
+}
+
 .eat {
     border-color: red;
 }
