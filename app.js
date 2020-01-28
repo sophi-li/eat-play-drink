@@ -1,5 +1,3 @@
-// For review
-
 // Array of markers
 const markers = [
     {
