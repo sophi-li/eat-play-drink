@@ -39,57 +39,67 @@ const markers = [
 
 // Init gooMarkers to be able to use map setVisible property
 let gooMarkers = [];
-
+let infoWindowsList = [];
 
 function initMap(){
-    // Map options
+    // Map options, setting SF to center
     let options = {
       zoom:12,
       center:{lat:37.7749,lng:-122.4194}
     }
-
     // New map
     let map = new google.maps.Map(document.getElementById('map'), options);
-    // Loop through markers
+
+    // Add all markers
     for(let i = 0;i < markers.length;i++){
-      // Add marker
       addMarker(markers[i]);
     }
 
     // Add Marker Function
     function addMarker(props){
       let marker = new google.maps.Marker({
-        position:props.coords,
+        position: props.coords,
         map:map,
-        category: props.category
+        category: props.category, 
+        content: props.content
       });
       
       gooMarkers.push(marker)
 
-      // Check content
-      // if(props.content){
+      // Add marker content
       let infoWindow = new google.maps.InfoWindow({
         content:props.content
       });
-
       marker.addListener('click', function(){
         infoWindow.open(map, marker);
-      });
+        infoWindowsList.push(infoWindow)
         
-      // }
+      });
+  
+      // Close all info windows on map click
+      google.maps.event.addListener(map, "click", function() {
+        infoWindow.close();
+      });
+      }
     }
-  }
+    
 
-filterMarkers = function(category) {
-    for(i = 0; i < gooMarkers.length; i++) {
+
+let filterMarkers = function(category) {
+    for (i = 0; i < gooMarkers.length; i++) {
         if (gooMarkers[i].category === category || category.length === 0) {
             gooMarkers[i].setVisible(true)
         } else {
             gooMarkers[i].setVisible(false)
         }
-    }
+    }   
 }
 
-google.maps.event.addListener(map, "click", function(event) {
-  infowindow.close();
-})
+// Closes all infowindows 
+let closeAllInfoWindow = function() {
+  for(i = 0; i < infoWindowsList.length; i++) {
+    infoWindowsList[i].close();
+  }
+}
+  
+

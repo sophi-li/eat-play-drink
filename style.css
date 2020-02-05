@@ -51,6 +51,7 @@ button:hover{
     cursor: pointer;
 }
 
+/* FOCUS ON BUTTON WHEN CLICKED */
 button:focus {
     border: 2px solid;
     border-color: inherit;

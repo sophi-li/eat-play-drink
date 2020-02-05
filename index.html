@@ -25,16 +25,17 @@
         </p>
         <p>Choose from the buttons below to filter your search.</p>
         <div class="button-group">
-            <button onclick="filterMarkers(this.value)" value="eat" class="eat">eat</button>
-            <button onclick="filterMarkers(this.value)" value="play" class="play">play</button>
-            <button onclick="filterMarkers(this.value)" value="drink" class="drink">drink</button>
-            <button onclick="filterMarkers(this.value)" value="">reset</button>
+            <button onclick="filterMarkers(this.value); closeAllInfoWindow()" value="eat" class="eat">eat</button>
+            <button onclick="filterMarkers(this.value); closeAllInfoWindow()" value="play" class="play">play</button>
+            <button onclick="filterMarkers(this.value); closeAllInfoWindow()" value="drink" class="drink">drink</button>
+            <button onclick="filterMarkers(this.value); closeAllInfoWindow()" value="">reset</button>
         </div>
         <div id="map"></div>
     </section>
 
     
     <script src="app.js"></script>
+    
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtCHPCcXarjVCPkyLi-YvFQLy3I_tWDXU&callback=initMap">
     </script>
