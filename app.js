@@ -87,7 +87,8 @@ function initMap(){
 
 let filterMarkers = function(category) {
     for (i = 0; i < gooMarkers.length; i++) {
-        if (gooMarkers[i].category === category || category.length === 0) {
+        // if (gooMarkers[i].category === category || category.length === 0) {
+          if (gooMarkers[i].category === category || category === "reset") {
             gooMarkers[i].setVisible(true)
         } else {
             gooMarkers[i].setVisible(false)
@@ -102,4 +103,19 @@ let closeAllInfoWindow = function() {
   }
 }
   
+
+// TODO: Refactor to for loop
+let parentButton = document.getElementsByClassName("button-group")
+// console.log(parentButton)
+
+// Highlights selected button with active class
+let highlighActive = function(type) {
+  // for loop through all buttons to reset style
+  document.getElementById("eat").classList.remove("active")
+  document.getElementById("play").classList.remove("active")
+  document.getElementById("drink").classList.remove("active")
+  document.getElementById("reset").classList.remove("active")
+
+  document.getElementById(type).classList.add("active" )
+}
 

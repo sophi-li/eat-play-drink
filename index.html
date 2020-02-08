@@ -24,11 +24,11 @@
             curated by a San Franciso native.
         </p>
         <p>Choose from the buttons below to filter your search.</p>
-        <div class="button-group">
-            <button onclick="filterMarkers(this.value); closeAllInfoWindow()" value="eat" class="eat">eat</button>
-            <button onclick="filterMarkers(this.value); closeAllInfoWindow()" value="play" class="play">play</button>
-            <button onclick="filterMarkers(this.value); closeAllInfoWindow()" value="drink" class="drink">drink</button>
-            <button onclick="filterMarkers(this.value); closeAllInfoWindow()" value="">reset</button>
+        <div class="button-group" id="myDiv" >
+            <button onclick="filterMarkers(this.value); closeAllInfoWindow(); highlighActive(this.value)" value="eat" class="eat btn" id="eat">eat</button>
+            <button onclick="filterMarkers(this.value); closeAllInfoWindow(); highlighActive(this.value)" value="play" class="play btn" id="play">play</button>
+            <button onclick="filterMarkers(this.value); closeAllInfoWindow(); highlighActive(this.value)" value="drink" class="drink btn" id="drink">drink</button>
+            <button onclick="filterMarkers(this.value); closeAllInfoWindow(); highlighActive(this.value)" value="reset" class="btn" id="reset">reset</button>
         </div>
         <div id="map"></div>
     </section>

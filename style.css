@@ -47,14 +47,14 @@ button {
     font-size: 1.5rem;
 }
 
-button:hover{
+.active, button:hover {
     cursor: pointer;
+    border-width: 3px;
+    font-weight: bold;
 }
 
-/* FOCUS ON BUTTON WHEN CLICKED */
 button:focus {
-    border: 2px solid;
-    border-color: inherit;
+    outline: 0;
 }
 
 .eat {
