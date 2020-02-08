@@ -97,14 +97,16 @@ let filterMarkers = function(category) {
 }
 
 // Closes all infowindows 
-let closeAllInfoWindow = function() {
+const closeAllInfoWindow = function() {
   for(i = 0; i < infoWindowsList.length; i++) {
     infoWindowsList[i].close();
   }
 }
   
 // Highlights selected button with active class
-let highlighActive = function(type) {
+const parentButton = document.getElementById("myDiv")
+
+const highlighActive = function(type) {
   // for loop through all buttons to reset style
   for (let i = 0; i < parentButton.children.length; i++) {
     parentButton.children[i].classList.remove("active")
