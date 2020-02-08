@@ -103,19 +103,12 @@ let closeAllInfoWindow = function() {
   }
 }
   
-
-// TODO: Refactor to for loop
-let parentButton = document.getElementsByClassName("button-group")
-// console.log(parentButton)
-
 // Highlights selected button with active class
 let highlighActive = function(type) {
   // for loop through all buttons to reset style
-  document.getElementById("eat").classList.remove("active")
-  document.getElementById("play").classList.remove("active")
-  document.getElementById("drink").classList.remove("active")
-  document.getElementById("reset").classList.remove("active")
-
+  for (let i = 0; i < parentButton.children.length; i++) {
+    parentButton.children[i].classList.remove("active")
+  }
   document.getElementById(type).classList.add("active" )
 }
 
