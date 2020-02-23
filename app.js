@@ -13,9 +13,33 @@ const markers = [
     category: "eat"
   },
   {
+    coords: { lat: 37.7819, lng: -122.4101 },
+    content:
+      "<h3>Tu Lan</h3><p>Hole-in-the-wall Vietnamese restaurant with the best beef salad.</p><a href='https://goo.gl/maps/aNMsAqpzZ9wzeaW89' target='_blank'>Get directions</a> ",
+    category: "eat"
+  },
+  {
+    coords: { lat: 37.7639, lng: -122.4673 },
+    content:
+      "<h3>Manna</h3><p>Hole-in-the-wall family-owned Korean restaurant with the best tofu soup.</p><a href='https://goo.gl/maps/TkAFCrGrswH76hmT8' target='_blank'>Get directions</a> ",
+    category: "eat"
+  },
+  {
     coords: { lat: 37.8015, lng: -122.3975 },
     content:
       "<h3>Exploratorium</h3><p>Hands on science museum for all ages.</p><a href='https://goo.gl/maps/GhdjWJTFFnW6tUZB8' target='_blank'>Get directions</a>",
+    category: "play"
+  },
+  {
+    coords: { lat: 37.7699, lng: -122.4661 },
+    content:
+      "<h3>California Academy of Sciences</h3><p>Four-story science museum with rooftop garden in Golden Gate Park.</p><a href='https://goo.gl/maps/fYWNUDFHFaFsmBYs9' target='_blank'>Get directions</a>",
+    category: "play"
+  },
+  {
+    coords: { lat: 37.761, lng: -122.4126 },
+    content:
+      "<h3>Mission Cliffs</h3><p>Climbing gym with top-roping, bouldering, and fitness classes.</p><a href='https://goo.gl/maps/FiesP46PyEahaVxN6' target='_blank'>Get directions</a>",
     category: "play"
   },
   {
@@ -40,6 +64,12 @@ const markers = [
     coords: { lat: 37.757761, lng: -122.388084 },
     content:
       "<h3>Magnolia Brewing</h3><p>Spacious brewery with many IPAs on tap and snacks.</p><a href='https://goo.gl/maps/FGYYSRVHWDxr2oKp6' target='_blank'>Get directions</a>",
+    category: "drink"
+  },
+  {
+    coords: { lat: 37.784, lng: -122.4091 },
+    content:
+      "<h3>Mikkeller Bar</h3><p>Spacious gastropub with wide beer selection in downtown SF.</p><a href='https://goo.gl/maps/H2RR8ZA6PFPjb44EA' target='_blank'>Get directions</a>",
     category: "drink"
   }
 ];
