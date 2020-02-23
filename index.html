@@ -23,7 +23,7 @@
       </p>
       <p>Choose from the buttons below to filter your search.</p>
       <div class="button-group" id="myDiv">
-        <button
+        <!-- <button
           onclick="filterMarkers(this.value); closeAllInfoWindow(); highlighActive(this.value)"
           value="eat"
           class="eat btn"
@@ -51,6 +51,38 @@
           onclick="filterMarkers(this.value); closeAllInfoWindow(); highlighActive(this.value)"
           value="reset"
           class="all btn"
+          id="reset"
+        >
+          All
+        </button> -->
+        <button
+          onclick="filterFunc(this.value);"
+          value="eat"
+          class="eat btn"
+          id="eat"
+        >
+          eat
+        </button>
+        <button
+          onclick="filterFunc(this.value);"
+          value="play"
+          class="play btn"
+          id="play"
+        >
+          play
+        </button>
+        <button
+          onclick="filterFunc(this.value);"
+          value="drink"
+          class="drink btn"
+          id="drink"
+        >
+          drink
+        </button>
+        <button
+          onclick="filterFunc(this.value);"
+          value="reset"
+          class="reset btn"
           id="reset"
         >
           All

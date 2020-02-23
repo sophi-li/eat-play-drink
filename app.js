@@ -89,34 +89,27 @@ function initMap() {
   }
 }
 
-const btn = document.querySelectorAll("button");
-
-// Returns the category clicked
-let filterMarkers = function(category) {
+// Filter function when button is clicked
+let filterFunc = function(category) {
+  // Returns the category clicked
   for (i = 0; i < gooMarkers.length; i++) {
-    // if (gooMarkers[i].category === category || category.length === 0) {
     if (gooMarkers[i].category === category || category === "reset") {
       gooMarkers[i].setVisible(true);
     } else {
       gooMarkers[i].setVisible(false);
     }
   }
-};
 
-// Closes all infowindows
-const closeAllInfoWindow = function() {
+  // Closes all infowindows
   for (i = 0; i < infoWindowsList.length; i++) {
     infoWindowsList[i].close();
   }
-};
 
-// Highlights selected button with active class
-const parentButton = document.getElementById("myDiv");
-
-const highlighActive = function(type) {
+  // Highlights selected button with active class
+  const parentButton = document.getElementById("myDiv");
   // for loop through all buttons to reset style
   for (let i = 0; i < parentButton.children.length; i++) {
     parentButton.children[i].classList.remove("active");
   }
-  document.getElementById(type).classList.add("active");
+  document.getElementById(category).classList.add("active");
 };
