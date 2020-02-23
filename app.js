@@ -1,4 +1,4 @@
-// Array of markers
+// Array of object markers
 const markers = [
   {
     coords: { lat: 37.7638, lng: -122.469 },
