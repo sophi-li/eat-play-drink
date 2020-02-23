@@ -3,43 +3,43 @@ const markers = [
   {
     coords: { lat: 37.7638, lng: -122.469 },
     content:
-      "<h3>San Tung</h3><p>Chinese restaurant with delicious dry fried chicken wings.</p>",
+      "<h3>San Tung</h3><p>Chinese restaurant with delicious dry fried chicken wings.</p><a href='https://goo.gl/maps/wiqva8qzW9bBoJRJ6' target='_blank'>Get directions</a>",
     category: "eat"
   },
   {
     coords: { lat: 37.7332, lng: -122.4344 },
     content:
-      "<h3>One Wan Thai Restaurant</h3><p>Vast selection of delicious Thai curries, noodles, and soups with beautiful plating.</p>",
+      "<h3>One Wan Thai Restaurant</h3><p>Vast selection of delicious Thai curries, noodles, and soups with beautiful plating.</p><a href='https://goo.gl/maps/zCosF1XA5d2Mf1ReA' target='_blank'>Get directions</a> ",
     category: "eat"
   },
   {
     coords: { lat: 37.8015, lng: -122.3975 },
     content:
-      "<h3>Exploratorium</h3><p>Hands on science museum for all ages.</p>",
+      "<h3>Exploratorium</h3><p>Hands on science museum for all ages.</p><a href='https://goo.gl/maps/GhdjWJTFFnW6tUZB8' target='_blank'>Get directions</a>",
     category: "play"
   },
   {
     coords: { lat: 37.7754, lng: -122.4377 },
     content:
-      "<h3>Emporium</h3><p>Lively barcade with arcade games, pool, and air hockey.</p>",
+      "<h3>Emporium</h3><p>Lively barcade with arcade games, pool, and air hockey.</p><a href='https://goo.gl/maps/aAFSMgJmVg3Lm8SJA' target='_blank'>Get directions</a>",
     category: "play"
   },
   {
     coords: { lat: 37.7399, lng: -122.4091 },
     content:
-      "<h3>Bare Bottle</h3><p>Spacious brewery with wide selection of beers on tap, acrcade games, and rotating food trucks.</p>",
+      "<h3>Bare Bottle</h3><p>Spacious brewery with wide selection of beers on tap, acrcade games, and rotating food trucks.</p><a href='https://goo.gl/maps/PmB4NdxAvxTkJohh6' target='_blank'>Get directions</a>",
     category: "drink"
   },
   {
     coords: { lat: 37.728263, lng: -122.404139 },
     content:
-      "<h3>Fermet, Drink, Repeat</h3><p>Small brewery with a few beers and kombuchas on tap, board games, and bring your own food.</p>",
+      "<h3>Fermet, Drink, Repeat</h3><p>Small brewery with a few beers and kombuchas on tap, board games, and bring your own food.</p><a href='https://goo.gl/maps/JG2skPodDpMS3y7y7' target='_blank'>Get directions</a>",
     category: "drink"
   },
   {
     coords: { lat: 37.757761, lng: -122.388084 },
     content:
-      "<h3>Magnolia Brewing</h3><p>Spacious brewery with many IPAs on tap and snacks.</p>",
+      "<h3>Magnolia Brewing</h3><p>Spacious brewery with many IPAs on tap and snacks.</p><a href='https://goo.gl/maps/FGYYSRVHWDxr2oKp6' target='_blank'>Get directions</a>",
     category: "drink"
   }
 ];
@@ -89,7 +89,7 @@ function initMap() {
   }
 }
 
-// const btn = document.querySelectorAll('button');
+const btn = document.querySelectorAll("button");
 
 // Returns the category clicked
 let filterMarkers = function(category) {
