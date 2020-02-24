@@ -1,5 +1,5 @@
-// Array of object markers
-const markers = [
+// Array of places and metadata
+const places = [
   {
     coords: { lat: 37.7638, lng: -122.469 },
     content:
@@ -74,72 +74,103 @@ const markers = [
   }
 ];
 
-// Init gooMarkers to be able to use map setVisible property
-let gooMarkers = [];
-let infoWindowsList = [];
+// `categories` is our main data store. It is populated inside the
+// `initMap` method. Once populated, its structure is:
+//
+// {
+//   "eat": {
+//     "button": <button object>,
+//     "places": [
+//       {
+//         "marker": <google maps marker object",
+//         "infoWindow": <google maps infoWindow object"
+//       },
+//       // ...
+//     ],
+//   },
+//   "drink" {
+//     // See above
+//   },
+//   // ...
+// }
+//
+// It is used to group together all data and HTML elements
+// for each category.
+let categories = {};
 
 function initMap() {
-  // Map options, setting SF to center
   let options = {
     zoom: 12,
     center: { lat: 37.7749, lng: -122.4194 }
   };
-  // New map
   let map = new google.maps.Map(document.getElementById("map"), options);
 
-  // Add all markers
-  for (let i = 0; i < markers.length; i++) {
-    addMarker(markers[i]);
-  }
-
-  // Add Marker Function
-  function addMarker(props) {
+  // Populate `categories`, structured as above
+  for (const p of places) {
     let marker = new google.maps.Marker({
-      position: props.coords,
+      position: p.coords,
       map: map,
-      category: props.category,
-      content: props.content
+      category: p.category,
+      content: p.content
     });
 
-    gooMarkers.push(marker);
-
-    // Add marker content
     let infoWindow = new google.maps.InfoWindow({
-      content: props.content
+      content: p.content
     });
     marker.addListener("click", function() {
       infoWindow.open(map, marker);
-      infoWindowsList.push(infoWindow);
     });
 
-    // Close all info windows on map click
+    // If this is the first time we have seen the current
+    // place's category, initialize the entry in `categories`.
+    categories[p.category] = categories[p.category] || {
+      // Empty `places` array
+      'places': [],
+      // Grab the corresponding button from the DOM (we would
+      // ideally do this in a separate step from the place
+      // initialization) to keep everything distinct.
+      'button': document.getElementById(p.category),
+    }
+    // Add the marker and infoWindow for this place to
+    // the corresponding category's `places` array.
+    categories[p.category].places.push({
+      'marker': marker,
+      'infoWindow': infoWindow,
+    })
+
+    // Close the infoWindow when user clicks on the map.
     google.maps.event.addListener(map, "click", function() {
       infoWindow.close();
     });
   }
 }
 
-// Filter function when button is clicked
+// `filterFunc` is called when a category button is clicked.
+// Its job is to hide/display markers and restyle buttons,
+// depending on the category that was clicked.
 let filterFunc = function(category) {
-  // Returns the category clicked
-  for (i = 0; i < gooMarkers.length; i++) {
-    if (gooMarkers[i].category === category || category === "reset") {
-      gooMarkers[i].setVisible(true);
-    } else {
-      gooMarkers[i].setVisible(false);
+  for (const [cat, data] of Object.entries(categories)) {
+    // `isSelected` represents whether the current category was
+    // the one that was clicked.
+    let isSelected = cat === category;
+
+    // `isVisible` represents whether the current category's
+    // markers should be visible. Note that if the
+    // pseudo-category "reset" was clicked then all markers
+    // should be made visible.
+    let isVisible = isSelected || category === "reset"
+    for (const place of data.places) {
+      place.marker.setVisible(isVisible);
+      place.infoWindow.close()
+    }
+
+    // Re-style the button, which we found in the DOM as part
+    // of `initMap`.
+    if (isSelected) {
+      data.button.classList.add("active")
+    }
+    else {
+      data.button.classList.remove("active")
     }
   }
-
-  // Closes all infowindows
-  for (i = 0; i < infoWindowsList.length; i++) {
-    infoWindowsList[i].close();
-  }
-
-  // Highlights selected button with active class
-  const parentButton = document.getElementById("myDiv");
-  // for loop through all buttons to reset style
-  for (let i = 0; i < parentButton.children.length; i++) {
-    parentButton.children[i].classList.remove("active");
-  }
-  document.getElementById(category).classList.add("active");
 };
