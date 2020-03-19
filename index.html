@@ -24,34 +24,38 @@
       <p>Choose from the buttons below to filter your search.</p>
       <div class="button-group" id="myDiv">
         <button
-          onclick="filterFunc(this.value);"
+          onclick="filterFunc(this.dataset.category);"
           value="eat"
-          class="eat btn"
+          class="btn eat"
           id="eat"
+          data-category="eat"
         >
           eat
         </button>
         <button
-          onclick="filterFunc(this.value);"
+          onclick="filterFunc(this.dataset.category);"
           value="play"
-          class="play btn"
+          class="btn play"
           id="play"
+          data-category="play"
         >
           play
         </button>
         <button
-          onclick="filterFunc(this.value);"
+          onclick="filterFunc(this.dataset.category);"
           value="drink"
-          class="drink btn"
+          class="btn drink"
           id="drink"
+          data-category="drink"
         >
           drink
         </button>
         <button
-          onclick="filterFunc(this.value);"
+          onclick="filterFunc(this.dataset.category);"
           value="reset"
-          class="reset btn"
+          class="btn reset"
           id="reset"
+          data-category="reset"
         >
           All
         </button>
